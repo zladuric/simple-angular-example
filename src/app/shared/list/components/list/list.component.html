@@ -1,0 +1,5 @@
+<ul>
+  <li *ngFor="let item of items">
+    <ng-container *ngFor="let field of fields; let last=last"> {{ item[field] }} <ng-container *ngIf="!last"> - </ng-container> </ng-container>
+  </li>
+</ul>

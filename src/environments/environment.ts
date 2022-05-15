@@ -1,16 +1,22 @@
-// This file can be replaced during build by using the `fileReplacements` array.
-// `ng build` replaces `environment.ts` with `environment.prod.ts`.
-// The list of file replacements can be found in `angular.json`.
+import { Env } from './env.interface';
 
-export const environment = {
-  production: false
+export const environment: Env = {
+  production: false,
+  backendConfig: {
+    apiUrl: 'https://jsonplaceholder.typicode.com',
+    withAuth: false,
+  },
+  authConfig: {
+    clientId: 'zwitscher',
+    redirectUri: 'https://localhost:4200',
+    useSilentRefresh: true,
+    // requireHttps: false,
+    oidc: false,
+  },
+  authModuleConfig: {
+    resourceServer: {
+      allowedUrls: ['https://localhost:4200', 'https://jsonplaceholder.typicode.com/'],
+      sendAccessToken: true,
+    },
+  },
 };
-
-/*
- * For easier debugging in development mode, you can import the following file
- * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.
- *
- * This import should be commented out in production mode because it will have a negative impact
- * on performance if an error is thrown.
- */
-// import 'zone.js/plugins/zone-error';  // Included with Angular CLI.

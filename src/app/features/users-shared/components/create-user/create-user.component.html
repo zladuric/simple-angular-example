@@ -1,0 +1,115 @@
+<form [formGroup]="userForm" novalidate (ngSubmit)="onSubmit()">
+  <mat-card class="create-user-card">
+    <mat-card-header>
+      <mat-card-title>Create User</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="row">
+        <div class="col">
+          <mat-form-field appearance="fill" class="full-width">
+            <input matInput placeholder="Name" formControlName="name">
+          </mat-form-field>
+          <mat-error *ngIf="userForm.controls['name'].dirty && userForm.controls['name'].hasError('required')">
+            Name is <strong>required</strong>
+          </mat-error>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width" appearance="fill">
+            <input matInput placeholder="Username" formControlName="username">
+          </mat-form-field>
+          <mat-error *ngIf="userForm.controls['username'].dirty && userForm.controls['username'].hasError('required')">
+            Username is <strong>required</strong>
+          </mat-error>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width" appearance="fill">
+            <input matInput placeholder="Email" type="email" formControlName="email">
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width" appearance="fill">
+            <input matInput placeholder="Phone" formControlName="phone">
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width" appearance="fill">
+            <input matInput placeholder="Website" formControlName="website">
+          </mat-form-field>
+        </div>
+      </div>
+      <hr>
+      <div class="row">
+        <h4>Address</h4>
+      </div>
+      <ng-container formGroupName="address">
+        <div class="row">
+          <div class="col">
+            <mat-form-field class="full-width" appearance="fill">
+              <input matInput placeholder="Street" formControlName="street">
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <mat-form-field class="full-width" appearance="fill">
+              <input matInput placeholder="Suite" formControlName="suite">
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <mat-form-field class="full-width" appearance="fill">
+              <input matInput placeholder="City" formControlName="city">
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <mat-form-field class="full-width" appearance="fill">
+              <input matInput #postalCode maxlength="5" placeholder="Zipcode" type="number" formControlName="zipcode">
+              <mat-hint align="end">{{postalCode.value.length}} / 5</mat-hint>
+            </mat-form-field>
+          </div>
+        </div>
+      </ng-container>
+      <hr>
+      <div class="row">
+        <h4>Company</h4>
+      </div>
+      <ng-container formGroupName="company">
+        <div class="row">
+          <div class="col">
+            <mat-form-field class="full-width" appearance="fill">
+              <input matInput placeholder="Name" formControlName="name">
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <mat-form-field class="full-width" appearance="fill">
+              <input matInput placeholder="Catchphrase" formControlName="catchPhrase">
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <mat-form-field class="full-width" appearance="fill">
+              <input matInput placeholder="BS" formControlName="bs">
+            </mat-form-field>
+          </div>
+        </div>
+      </ng-container>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color="secondary" type="submit">Submit</button>
+    </mat-card-actions>
+  </mat-card>
+</form>

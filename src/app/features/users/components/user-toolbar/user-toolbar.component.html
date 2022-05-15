@@ -1,0 +1,13 @@
+<mat-toolbar>
+  <span>Users</span>
+  <span class="example-spacer"></span>
+  <button mat-icon-button class="example-icon favorite-icon" aria-label="Add user" (click)="createUser.emit()">
+    <mat-icon>add</mat-icon>
+  </button>
+  <button mat-icon-button class="example-icon favorite-icon" aria-label="Grid view" (click)="viewModeChange.emit('grid')">
+    <mat-icon>dashboard</mat-icon>
+  </button>
+  <button mat-icon-button class="example-icon" aria-label="Table view" (click)="viewModeChange.emit('list')">
+    <mat-icon>table</mat-icon>
+  </button>
+</mat-toolbar>

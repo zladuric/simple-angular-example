@@ -1,0 +1,22 @@
+<mat-card class="user-card">
+  <mat-card-header>
+    <div mat-card-avatar class="user-header-image"></div>
+    <mat-card-title><ng-container *ngIf="title">{{ title }}</ng-container><ng-container *ngIf="!title">{{ user.username }}</ng-container></mat-card-title>
+    <mat-card-subtitle>{{ user.displayName }}</mat-card-subtitle>
+  </mat-card-header>
+  <img mat-card-image [src]="user.avatarUrl" alt="Photo of a {{ user.displayName }}">
+  <mat-card-content>
+    <div>
+      {{ user.displayName }} <span class="email">(<a href="mailto:{{ user.email }}">{{ user.email }}</a>)</span>
+      <br>
+      {{ user.company }} - {{ user.companyTag }}
+    </div>
+    <p>
+      Some placeholder text
+    </p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-button>Posts</button>
+    <button mat-button routerLink="/todos/by/{{ user.id }}">Todos</button>
+  </mat-card-actions>
+</mat-card>

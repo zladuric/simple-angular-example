@@ -1,0 +1,17 @@
+<div class="mat-elevation-z8">
+  <bram-user-toolbar (viewModeChange)="onViewModeChange($event)"
+                     (createUser)="onCreateUser()"
+  ></bram-user-toolbar>
+
+  <ng-container *ngIf="showUserForm$ | async">
+    <bram-create-post (addUser)="onAddUser($event)"></bram-create-post>
+  </ng-container>
+
+  <ng-container *ngIf="viewMode === 'grid'">
+      <bram-users-grid [users]="(users$ | async) || []"></bram-users-grid>
+  </ng-container>
+  <ng-container *ngIf="viewMode === 'list'">
+    <bram-user-list  [users]="(users$ | async) || []"></bram-user-list>
+  </ng-container>
+</div>
+

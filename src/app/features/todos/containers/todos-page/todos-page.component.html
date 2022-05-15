@@ -1,0 +1,14 @@
+<section class="toolbar">
+    <button mat-button (click)="reload()"><mat-icon>refresh</mat-icon></button>
+</section>
+<div class="user">
+  <bram-user-card *ngIf="user" [user]="user" [title]="'Todos by ' + user.username"></bram-user-card>
+  <p *ngIf="!user">Todos by all users</p>
+</div>
+<section class="list">
+
+  <strong>Todo</strong> - <strong>Name</strong> - <strong>Completeness</strong><br><p *ngIf="todos.length === 0">No todos.</p>
+</section>
+<bram-list #todoList [items]="todos" [fields]="['title', 'username', 'completed']"></bram-list>
+
+
