@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavItem } from '../../components/models/nav-item';
+import { NavItem } from '../../models/nav-item';
 import { routes } from '../../routes';
 
 @Component({
@@ -12,8 +12,8 @@ export class AppShellComponent {
 
   constructor() {
     this.navLinks = routes
-      .filter(route => route.data)
-      .map(route => {
+      .filter((route) => route.data)
+      .map((route) => {
         return {
           label: route.data ? route.data['label'] || '' : '',
           path: route.path || '',
