@@ -2,12 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { User, UserJSON } from '../../../users-shared/models/user';
 import { UsersPageService } from '../../services/users-page.service';
-import { ViewModeType } from '../../models/  view-mode-type';
+import { ViewModeType } from '../../models/view-mode-type';
 
 @Component({
   selector: 'bram-users-page',
   templateUrl: './users-page.component.html',
-  styleUrls: ['./users-page.component.scss']
+  styleUrls: ['./users-page.component.scss'],
 })
 export class UsersPageComponent implements OnInit {
   viewMode: ViewModeType = 'grid';
