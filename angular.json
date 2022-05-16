@@ -33,7 +33,7 @@
               "src/favicon.ico",
               "src/assets",
               "src/silent-refresh.html",
-              "config.json"
+              "src/assets/config.json"
             ],
             "styles": [
               "src/styles.scss"

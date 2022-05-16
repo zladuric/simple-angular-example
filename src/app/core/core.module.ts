@@ -18,12 +18,18 @@ import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { ShouldLoginComponent } from './components/should-login/should-login.component';
-
+import { RouterModule } from '@angular/router';
 
 @NgModule({
-  declarations: [HomeComponent, NavigationComponent, AppShellComponent, ShouldLoginComponent],
+  declarations: [
+    HomeComponent,
+    NavigationComponent,
+    AppShellComponent,
+    ShouldLoginComponent,
+  ],
   exports: [AppShellComponent],
   imports: [
+    RouterModule,
     CommonModule,
     CoreRoutingModule,
     MatGridListModule,
@@ -37,4 +43,4 @@ import { ShouldLoginComponent } from './components/should-login/should-login.com
     MatListModule,
   ],
 })
-export class CoreModule { }
+export class CoreModule {}
