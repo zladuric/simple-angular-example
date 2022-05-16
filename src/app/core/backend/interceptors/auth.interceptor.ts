@@ -15,7 +15,9 @@ export class AuthInterceptor implements HttpInterceptor {
 
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
     if (this.config.withAuth) {
-      request;
+      request = request.clone({
+        headers: request.headers.set('Access-Control-Allow-Origin', '*'),
+      });
     }
     return next.handle(request);
   }

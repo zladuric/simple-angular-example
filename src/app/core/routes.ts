@@ -25,6 +25,13 @@ export const routes: Routes = [
     }
   },
   {
+    path: 'posts',
+    data: {
+      label: 'Posts dummy',
+    },
+    loadChildren: () => import('../features/posts/posts.module').then(m => m.PostsModule),
+  },
+  {
     path: 'unauthenticated',
     component: ShouldLoginComponent,
   },

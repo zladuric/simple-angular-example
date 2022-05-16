@@ -1,0 +1,13 @@
+<mat-form-field appearance="fill" class="full-width">
+  <mat-label>Select</mat-label>
+  <mat-select (selectionChange)="onChangeValue($event)">
+    <mat-option *ngFor="let value of values" [value]="value">{{value}}</mat-option>
+  </mat-select>
+
+</mat-form-field>
+<span>Would you rather record your input with camera? <mat-icon (click)="cameraInput()">camera</mat-icon></span>
+
+<div class="mat-elevation-z4" *ngIf="showCamera">
+  <bram-webcam-snap (selected)="onSelected()"></bram-webcam-snap>
+</div>
+<p *ngIf="showFunnyThing">Nah, we better stick to dropdown, you're too funny.</p>

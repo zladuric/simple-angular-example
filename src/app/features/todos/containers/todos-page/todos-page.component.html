@@ -1,7 +1,7 @@
 <section class="toolbar">
     <button mat-button (click)="reload()"><mat-icon>refresh</mat-icon></button>
 </section>
-<div class="user">
+<div class="user" *ngIf="false">
   <bram-user-card *ngIf="user" [user]="user" [title]="'Todos by ' + user.username"></bram-user-card>
   <p *ngIf="!user">Todos by all users</p>
 </div>

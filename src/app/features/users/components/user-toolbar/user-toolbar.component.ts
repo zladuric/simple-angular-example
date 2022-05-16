@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Output } from '@angular/core';
-import { ViewModeType } from '../../models/  view-mode-type';
+import { ViewModeType } from '../../models/view-mode-type';
 
 @Component({
   selector: 'bram-user-toolbar',

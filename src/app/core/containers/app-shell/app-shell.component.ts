@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavItem } from '../../components/models/nav-item';
+import { NavItem } from '../../models/nav-item';
 import { routes } from '../../routes';
 
 @Component({

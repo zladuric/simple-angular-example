@@ -1,0 +1,32 @@
+<div class="mat-elevation-z8">
+  Some demo content
+</div>
+<br>
+<div class="mat-elevation-z8" [formGroup]="form">
+  <div class="row">
+    <div class="col">
+      <mat-form-field appearance="fill" class="full-width">
+        <input matInput placeholder="Mandatory entry" formControlName="mandator">
+      </mat-form-field>
+      <mat-error *ngIf="form.controls['mandator'].dirty && form.controls['mandator'].hasError('required')">
+        This is <strong>required</strong>.
+      </mat-error>
+    </div>
+    <div class="col">
+      <mat-form-field appearance="fill" class="full-width">
+        <input matInput placeholder="Multiple validators" formControlName="multipleValidators">
+      </mat-form-field>
+      <mat-error *ngIf="form.controls['multipleValidators'].dirty && form.controls['mandator'].hasError('required')">
+        This is <strong>required</strong>
+      </mat-error>
+      <mat-error *ngIf="form.controls['multipleValidators'].dirty && form.controls['mandator'].hasError('min')">
+        Make it bigger <strong>bigger</strong>
+      </mat-error>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <bram-funny-word-picker formControlName="funnyWord"></bram-funny-word-picker>
+    </div>
+  </div>
+</div>

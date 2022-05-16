@@ -3,6 +3,7 @@ import { OAuthService } from 'angular-oauth2-oidc';
 import { environment } from '../environments/environment';
 import { AuthService } from './core/backend/services/auth.service';
 import { Observable } from 'rxjs';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'bram-root',
@@ -26,6 +27,8 @@ export class AppComponent {
     } else {
       console.warn('Localhost, no auth service.');
     }
+
+
   }
   login() { this.authService.login(); }
   logout() { this.authService.logout(); }

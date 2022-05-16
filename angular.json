@@ -33,7 +33,7 @@
               "src/favicon.ico",
               "src/assets",
               "src/silent-refresh.html",
-              "config.json"
+              "src/assets/config.json"
             ],
             "styles": [
               "src/styles.scss"
@@ -46,7 +46,7 @@
                 {
                   "type": "initial",
                   "maximumWarning": "500kb",
-                  "maximumError": "1mb"
+                  "maximumError": "2mb"
                 },
                 {
                   "type": "anyComponentStyle",

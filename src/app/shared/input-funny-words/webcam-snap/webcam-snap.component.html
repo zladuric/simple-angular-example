@@ -1,0 +1,27 @@
+<div class="video-container" *ngIf="!error">
+  <video [class.show]="!isCaptured" [class.hide]="isCaptured" #video id="video" [width]="WIDTH" [height]="HEIGHT"
+         autoplay></video>
+  <canvas [class.show]="isCaptured" [class.hide]="!isCaptured" #canvas id="canvas" [width]="WIDTH"
+          [height]="HEIGHT"></canvas>
+</div>
+
+<div class="snap-container">
+  <button mat-button class="btn btn-primary" *ngIf="!isCaptured" (click)="capture()">Snap Photo</button>
+
+  <button mat-button class="btn btn-danger" *ngIf="isCaptured" (click)="removeCurrent()">Take Another</button>
+
+  <div *ngIf="error" class="text-danger mt-4">
+    {{ error }}. Please click refresh on stackblitz
+    <div class="mt-5">
+      <img src="https://trungk18.com/7e0976255739e721501803ee074f1f94/camera.gif" alt="cam"/>
+    </div>
+  </div>
+</div>
+
+<ul class="list-unstyled">
+  <li *ngFor="let src of captures; let idx = index" (click)="setPhoto(idx)">
+    <img [src]="src" height="50" alt="snap" />
+  </li>
+</ul>
+<button mat-button class="btn btn-secondary" *ngIf="captures.length > 0" (click)="selectLast()">Select that
+  last pic</button>

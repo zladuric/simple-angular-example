@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { User, UserJSON } from '../../../users-shared/models/user';
+import { ViewModeType } from '../../models/view-mode-type';
 import { UsersPageService } from '../../services/users-page.service';
-import { ViewModeType } from '../../models/  view-mode-type';
 
 @Component({
   selector: 'bram-users-page',
