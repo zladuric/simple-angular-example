@@ -2,13 +2,14 @@
   Some demo content
 </div>
 <br>
+
 <div class="mat-elevation-z8" [formGroup]="form">
   <div class="row">
     <div class="col">
       <mat-form-field appearance="fill" class="full-width">
-        <input matInput placeholder="Mandatory entry" formControlName="mandator">
+        <input matInput placeholder="Mandatory entry" formControlName="mandatory" required>
       </mat-form-field>
-      <mat-error *ngIf="form.controls['mandator'].dirty && form.controls['mandator'].hasError('required')">
+      <mat-error *ngIf="form.controls['mandatory'].dirty && form.controls['mandatory'].hasError('required')">
         This is <strong>required</strong>.
       </mat-error>
     </div>
@@ -16,10 +17,10 @@
       <mat-form-field appearance="fill" class="full-width">
         <input matInput placeholder="Multiple validators" formControlName="multipleValidators">
       </mat-form-field>
-      <mat-error *ngIf="form.controls['multipleValidators'].dirty && form.controls['mandator'].hasError('required')">
+      <mat-error *ngIf="form.controls['multipleValidators'].dirty && form.controls['multipleValidators'].hasError('required')">
         This is <strong>required</strong>
       </mat-error>
-      <mat-error *ngIf="form.controls['multipleValidators'].dirty && form.controls['mandator'].hasError('min')">
+      <mat-error *ngIf="form.controls['multipleValidators'].dirty && form.controls['multipleValidators'].hasError('min')">
         Make it bigger <strong>bigger</strong>
       </mat-error>
     </div>

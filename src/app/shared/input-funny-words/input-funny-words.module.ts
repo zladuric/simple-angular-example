@@ -6,6 +6,7 @@ import {MatSelectModule} from "@angular/material/select";
 import {MatIconModule} from "@angular/material/icon";
 import { WebcamSnapComponent } from './webcam-snap/webcam-snap.component';
 import {MatButtonModule} from "@angular/material/button";
+import { AnotherControlComponent } from './another-control/another-control.component';
 
 ;
 
@@ -14,7 +15,8 @@ import {MatButtonModule} from "@angular/material/button";
 @NgModule({
   declarations: [
     FunnyWordPickerComponent,
-    WebcamSnapComponent
+    WebcamSnapComponent,
+    AnotherControlComponent
   ],
   exports: [FunnyWordPickerComponent],
   providers: [

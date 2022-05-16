@@ -27,7 +27,7 @@ export enum FunnyWord {
 })
 export class FunnyWordPickerComponent implements ControlValueAccessor {
   isDisabled = false;
-  values = Object.keys(FunnyWord)
+  values = Object.keys(FunnyWord);
 
   /**
    * The registered callback function called when a change event occurs on the input element.
@@ -37,7 +37,7 @@ export class FunnyWordPickerComponent implements ControlValueAccessor {
    * The registered callback function called when a blur event occurs on the input element.
    */
   private onTouchedCallback!: () => void;
-  private formValue = FunnyWord.Canoodle;
+  formValue = FunnyWord.Canoodle ;
   showCamera = false;
   showFunnyThing = false;
 
@@ -73,7 +73,6 @@ export class FunnyWordPickerComponent implements ControlValueAccessor {
   }
 
   onSelected() {
-    console.log('thing');
     this.showFunnyThing = true;
     this.showCamera = false;
   }
